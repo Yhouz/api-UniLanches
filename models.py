@@ -1,14 +1,12 @@
-from multiprocessing.reduction import send_handle
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 from datetime import date, datetime
 
 class UsuarioBase(BaseModel):
     name: str
-    email: str
+    email: EmailStr
     cpf: str
-    telefone: str
-    senha: str
+    telefone: Optional[str]
     tipo_usuario: str  # cliente, funcionario, admin
 
 class UsuarioCreate(UsuarioBase):
