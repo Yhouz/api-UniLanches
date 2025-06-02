@@ -11,8 +11,8 @@ class UsuarioBase(BaseModel):
     senha: str
     tipo_usuario: str  # cliente, funcionario, admin
 
-#class UsuarioCreate(UsuarioBase):
- #   senha: str
+class UsuarioCreate(UsuarioBase):
+    senha: str
 
 class UsuarioOut(UsuarioBase):
     id_usuario: int
