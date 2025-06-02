@@ -78,3 +78,13 @@ class CardapioDoDiaOut(CardapioDoDiaBase):
 
     class Config:
         orm_mode = True
+class PagamentoCreate(BaseModel):
+    id_pedido: int
+    status_pagamento: str
+    metodo_pagamento: str
+    valor_pago: float
+    data_pagamento: Optional[datetime] = None
+    transacao_externa_id: Optional[str] = None
+
+class PagamentoOut(PagamentoCreate):
+    id_pagamento: int
